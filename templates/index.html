@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planificador de Rutas</title>
+</head>
+<body>
+    <h1>Planificador de Rutas</h1>
+
+    <h2>Planificar ruta</h2>
+    <form action="/planificar" method="post">
+        Origen:
+        <select name="origen">
+            {% for loc in locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+            {% endfor %}
+        </select><br>
+        Destino:
+        <select name="destino">
+            {% for loc in locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Calcular ruta">
+    </form>
+
+    <h2>Agregar nuevo paquete</h2>
+    <form action="/agregar_paquete" method="post">
+        Nombre del lugar: <input type="text" name="nombre"><br>
+        Dirección: <input type="text" name="direccion"><br>
+        <input type="submit" value="Agregar">
+    </form>
+</body>
+</html>
